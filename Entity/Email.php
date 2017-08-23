@@ -29,7 +29,7 @@ class Email
     
     /**
      * @var string
-     * @ORM\Column(name="key", type="string", length=255, nullable=false)
+     * @ORM\Column(name="mail_key", type="string", length=255, nullable=false)
      */
     protected $key;
     
@@ -85,7 +85,7 @@ class Email
      * @param string $subject
      * @return Email
      */
-    public function seSubject($subject)
+    public function setSubject($subject)
     {
         $this->subject = $subject;
 
@@ -113,12 +113,12 @@ class Email
         
         $tmp = preg_replace('/\s\s+/', ' ', $this->subject);
 
-        $ky = strtolower(preg_replace('/[^A-Za-z0-9\-]/', '-', $tmp));
-        $ky = preg_replace('/\-\-+/', '-', $ky);
-        $ky = rtrim($ky, '-');
-        $ky = ltrim($ky, '-');
+        $ky = strtolower(preg_replace('/[^A-Za-z0-9\-]/', '_', $tmp));
+        $ky = preg_replace('/\-\-+/', '_', $ky);
+        $ky = rtrim($ky, '_');
+        $ky = ltrim($ky, '_');
         
-        $this->key = $ky;
+        $this->key = strtoupper($ky);
 
         return $this;
     }

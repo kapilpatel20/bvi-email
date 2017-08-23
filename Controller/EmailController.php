@@ -60,7 +60,7 @@ class EmailController extends Controller {
 
             if ($form->isValid()) {
                 
-                $objMail->setSlug();
+                $objMail->setKey();
                 $objMail->setCreatedat(new DateTime());
                 $user = $this->get('security.context')->getToken()->getUser();
                 if (is_object($user)) {
@@ -102,7 +102,6 @@ class EmailController extends Controller {
 
             if ($form->isValid()) {
                 
-                $objMail->setSlug();
                 $objMail->setUpdatedat(new DateTime());
                 $user = $this->get('security.context')->getToken()->getUser();
                 if (is_object($user)) {
