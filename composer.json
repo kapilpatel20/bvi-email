@@ -1,0 +1,21 @@
+{
+    "name": "kapilpatel20/bvi-email",
+    "description": "Email template Management with crud options",
+    "type": "symfony-bundle",
+    "homepage": "https://github.com/kapilpatel20/bvi-email",
+    "authors": [{
+            "name": "Rahul Trivedi",
+            "email": "rahul.trivedi@brainvire.com"
+        }],
+    "keywords": [
+        "Email Template"
+    ],
+    "license": "proprietary",
+    "require": {
+        "knplabs/knp-paginator-bundle": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {"BviEmailBundle\\": ""}
+    },
+    "minimum-stability": "dev"
+}

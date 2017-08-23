@@ -1,0 +1,15 @@
+BviEmailBundle\Entity\Email:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [subject]
+            message: "Subject already exists."
+    properties:
+        subject:
+           - NotBlank:
+                message: "Please enter subject."
+        content:
+           - NotBlank:
+                message: "Please enter content."
+        status:
+            - NotBlank:
+                message: "Please select status."

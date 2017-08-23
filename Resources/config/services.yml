@@ -1,0 +1,4 @@
+services:
+#    bvi_email.example:
+#        class: BviEmailBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

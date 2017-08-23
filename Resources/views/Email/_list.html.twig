@@ -1,0 +1,16 @@
+{% if lstObj|length > 0 %}
+{% for lst in lstObj %}    
+    <tr scope="row" class="{{ cycle(['odd', 'even'], loop.index0) }}" >
+        <td>{{lst.id}}</td>
+        <td>{{lst.subject}}</td>
+        <td>{{lst.status}}</td>
+        <td>{{lst.createdat | format('Y-m-d')}}</td>
+        <td><a href="{{ path('bvi_email_edit', {'id' : lst.id})}}"> Edit</a> | <a href="javascript://" onclick="updateStatus('{{lst.id}}')">Change Status</a></td>
+    </tr>
+{% endfor %}
+{% else %}
+    <tr><td colspan="5">No record found</td></tr>
+{% endif %}
+<div class="navigation">
+ {{ knp_pagination_render(lstObj) }}
+</div>

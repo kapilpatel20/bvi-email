@@ -1,0 +1,19 @@
+bvi_email_index:
+    path:     /email
+    defaults: { _controller: BviEmailBundle:Email:index }
+
+bvi_email_list:
+    path:     /list
+    defaults: { _controller: BviEmailBundle:Email:index }
+
+bvi_email_new:
+    path:     /new
+    defaults: { _controller: BviEmailBundle:Email:new }
+    
+bvi_email_edit:
+    path:     /edit/{id}
+    defaults: { _controller: BviEmailBundle:Email:edit }
+    
+bvi_email_update_status:
+    path:     /update-status
+    defaults: { _controller: BviEmailBundle:Email:updateStatus }    
